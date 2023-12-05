@@ -1,0 +1,32 @@
+<div class="list-page-wrapper">
+  <app-item-form
+    class="add-form"
+    *ngIf="showForm"
+    (closeForm)="addItem()"
+  ></app-item-form>
+  <section class="top-controls">
+    <h3>{{ pageTitle }}</h3>
+    <img
+      (click)="addItem()"
+      src="../../../assets/add-icon.svg"
+      alt="add icon"
+    />
+  </section>
+  <header>
+    <div class="left-group">
+      <p class="item-color">Color</p>
+      <p>Name</p>
+    </div>
+    <div class="right-group">
+      <p>Create Date</p>
+      <p>Last Update</p>
+      <p>Create By</p>
+    </div>
+  </header>
+  <div class="col" *ngFor="let item of items">
+    <app-list-item
+      (click)="selectItem($event, item)"
+      [itemData]="item"
+    ></app-list-item>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="item-wrapper">
+  <div class="left-group">
+    <div
+      class="item-color"
+      [ngStyle]="{ 'background-color': itemData.color }"
+    ></div>
+    <div class="item-name unnamed-character-style-6">{{ itemData.name }}</div>
+  </div>
+
+  <div class="right-group">
+    <div class="item-date">{{ itemData.createDate | date : "dd-MM-YYYY" }}</div>
+    <div class="item-item-date">
+      {{ itemData.lastUpdate | date : "dd-MM-YYYY" }}
+    </div>
+    <div class="item-item-date">{{ itemData.createBy }}</div>
+  </div>
+</div>

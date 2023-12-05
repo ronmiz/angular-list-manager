@@ -1,0 +1,52 @@
+<div class="form-page-wrapper">
+  <header class="form-header">
+    <h2 class="form-title">{{ formTitle }}</h2>
+    <img
+      class="close-btn"
+      (click)="closeFrom($event)"
+      src="../../../assets/close-off-icon.svg"
+      alt="close button"
+    />
+  </header>
+
+  <form class="form-add" [formGroup]="itemForm" (ngSubmit)="onSave()">
+    <div class="form-first-line">
+      <div>
+        <label for="name">Name:</label>
+        <input
+          class="input-field"
+          type="text"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-input">
+        <label for="color">Color:</label>
+        <input
+          class="color-select"
+          type="color"
+          id="color"
+          formControlName="color"
+        />
+      </div>
+    </div>
+    <div class="form-input">
+      <label for="createBY">Created By:</label>
+      <input
+        class="input-field"
+        type="text"
+        id="createBY"
+        formControlName="createBY"
+      />
+    </div>
+
+    <div class="form-buttons">
+      <button class="cancel-btn" type="button" (click)="onCancel($event)">
+        Cancel
+      </button>
+      <button class="submit-btn" type="submit" [disabled]="itemForm.invalid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
